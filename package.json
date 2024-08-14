@@ -15,7 +15,9 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/express/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
+    "dev.open": "vite --open --mode ssr",
     "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
@@ -23,18 +25,23 @@
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview",
-    "start": "vite --mode ssr --host",
+    "serve": "node server/entry.express",
+    "start": "node server/entry.express",    
     "qwik": "qwik"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.8.0",
     "@builder.io/qwik-city": "^1.8.0",
     "@qwikest/icons": "^0.0.13",
+    "@types/compression": "^1.7.2",
     "@types/eslint": "8.56.10",
+    "@types/express": "^4.17.19",
     "@types/node": "20.14.11",
     "@typescript-eslint/eslint-plugin": "7.16.1",
     "@typescript-eslint/parser": "7.16.1",
     "class-variance-authority": "^0.7.0",
+    "compression": "^1.7.4",
+    "dotenv": "^16.3.2",
     "eslint": "8.57.0",
     "eslint-plugin-qwik": "^1.8.0",
     "nx": "^19.5.7",
@@ -45,5 +52,8 @@
     "vite": "5.3.5",
     "vite-tsconfig-paths": "^4.2.1"
   },
-  "nx": {}
+  "nx": {},
+  "dependencies": {
+    "express": "4.19.2"
+  }
 }
