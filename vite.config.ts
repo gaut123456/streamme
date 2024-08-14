@@ -58,6 +58,11 @@ export default defineConfig(({ command, mode }): UserConfig => {
         "Cache-Control": "public, max-age=600",
       },
     },
+    build: {
+      rollupOptions: {
+        input: ['src/entry.ssr.tsx', 'src/entry.spa.tsx'],
+      },
+    },
   };
 });
 
