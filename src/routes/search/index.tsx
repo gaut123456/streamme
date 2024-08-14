@@ -1,6 +1,7 @@
 import { component$, $, useSignal, useStore } from "@builder.io/qwik";
 import "./index.css";
 import { useNavigate } from "@builder.io/qwik-city";
+import type { Movie } from '~/interfaces/search/movie';
 
 export default component$(() => {
 	const nav = useNavigate();

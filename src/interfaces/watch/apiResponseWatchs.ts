@@ -1,4 +1,4 @@
-interface ApiResponseWatchs {
+export interface ApiResponseWatchs {
   omdb: {
     rating: string;
     plot: string;

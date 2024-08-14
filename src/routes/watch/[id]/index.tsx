@@ -1,6 +1,7 @@
 import { Resource, component$, useResource$ } from "@builder.io/qwik";
 import { useLocation, type DocumentHead } from "@builder.io/qwik-city";
 import "./index.css";
+import type { ApiResponseWatchs } from '~/interfaces/watch/apiResponseWatchs';
 
 export default component$(() => {
   const loc = useLocation();
