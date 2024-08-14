@@ -60,7 +60,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
     },
     build: {
       rollupOptions: {
-        input: ['src/entry.ssr.tsx', 'src/entry.spa.tsx'],
+        input: ['src/entry.ssr.tsx', 'src/entry.dev.tsx'],
       },
     },
   };
