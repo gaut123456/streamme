@@ -1,0 +1,152 @@
+:root {
+  --primary-color: #6200ea;
+  --secondary-color: #b388ff;
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-color: #ffffff;
+}
+
+.streamme-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.streamme-header {
+  padding: 20px 0;
+}
+
+.streamme-logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.loading-spinner {
+  border: 4px solid var(--surface-color);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  background-color: #cf6679;
+  color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.retry-button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.movie-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.image-wrapper {
+  position: relative;
+  width: 100%; /* Full width of the container */
+  padding-top: 150%; /* Adjust based on the aspect ratio of your images */
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without losing aspect ratio */
+}
+
+.movie-poster {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movie-poster img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.movie-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  padding: 20px;
+  color: var(--text-color);
+}
+
+.movie-overlay h2 {
+  margin: 0 0 10px 0;
+}
+
+.movie-year, .movie-quality {
+  display: inline-block;
+  background-color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+.movie-info {
+  background-color: var(--surface-color);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.play-button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.play-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.video-player {
+  grid-column: 1 / -1;
+  margin-top: 30px;
+}
+
+.video-player iframe {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .movie-details {
+    grid-template-columns: 1fr;
+  }
+}
